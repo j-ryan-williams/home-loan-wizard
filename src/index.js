@@ -4,6 +4,15 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import { Provider } from 'react-redux';
+import Store from './store';
+import { HashRouter } from 'react-router-dom';
 
+ReactDOM.render(
+  <HashRouter>
+    <Provider store={Store} >
+      <App />
+    </Provider>
+  </HashRouter>,
+  document.getElementById('root'));
+  registerServiceWorker();
